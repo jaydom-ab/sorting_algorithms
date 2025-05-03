@@ -6,7 +6,7 @@ public class insertion{
         ArrayList<Integer> list = listGen.generate(15);
         
         /*
-         *  Use Insertion Sort on the list:
+         *  Insertion Sort:
          *  Swap the current element with the previous element if the value of the previous
          *  is greater than the value of the current
          *  (TL;DR: Swap while list[i-1] > list[i])
