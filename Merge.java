@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class merge{
+public class Merge{
     ListGenerator listGen = new ListGenerator();
     ArrayList<Integer> list = listGen.generate(15);
 
@@ -10,7 +10,7 @@ public class merge{
      * 2. 
      */
 
-    public merge(){
+    public Merge(){
         
     }
 
