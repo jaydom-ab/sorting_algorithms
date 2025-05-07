@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class compare_algorithms{
     public static void main(String[] args){
-        ListGenerator listGen = new ListGenerator(50);
+        ListGenerator listGen = new ListGenerator(500);
         
         long begin = 0;
         long end = 0;
@@ -42,10 +42,19 @@ public class compare_algorithms{
         ArrayList<Integer> mergeList = listGen.generate();
         Merge merge_ex = new Merge();
         begin = System.nanoTime();
-        merge_ex.sort(mergeList);
+        merge_ex.mergeSort(mergeList);
         end = System.nanoTime();
         time = (end - begin) / 1000;
         printout("Merge Sort", time);
+
+        // Quick Sort
+        ArrayList<Integer> quickList = listGen.generate();
+        Quick quick_ex = new Quick();
+        begin = System.nanoTime();
+        quick_ex.quickSort(quickList);
+        end = System.nanoTime();
+        time = (end - begin) / 1000;
+        printout("Quick Sort", time);
 
     }
 

@@ -4,25 +4,20 @@ public class Merge{
 
     /*
      * Merge Sort:
-     * 1. Divide the array into two until the base case ()
-     * 2. 
+     * 1. Find the middle element, dividing the list into two partitions
+     * 2. mergeSort the left partition and then the right partition
+     * 3. merge the two partitions
      */
 
-    public void sort(ArrayList<Integer> list){
-        mergeSort(list, 0, list.size() - 1); 
-        // System.out.println(list);
-    }
-
     public void mergeSort(ArrayList<Integer> list, int start, int end){
-        if (start >= end){
-            return;
-        }
+        if (start < end){
+            int middle = (end + start) / 2;
 
-        int middle = (end + start) / 2;
-        mergeSort(list, start, middle);
-        mergeSort(list, middle + 1, end);
-        
-        merge(list, start, middle, end);
+            mergeSort(list, start, middle);
+            mergeSort(list, middle + 1, end);
+            
+            merge(list, start, middle, end);
+        }
     }
 
     public void merge(ArrayList<Integer> list, int start, int middle, int end){
@@ -65,6 +60,10 @@ public class Merge{
             j++;
             k++;
         }
+    }
+
+    public void mergeSort(ArrayList<Integer> list){
+        this.mergeSort(list, 0, list.size() - 1); 
     }
 
 }
